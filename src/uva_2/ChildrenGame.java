@@ -3,41 +3,41 @@
  * and open the template in the editor.
  */
 package uva_2;
+//uva 10905
 
-/**
- *
- * @author user
- */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 
-public class Main {
+/**
+ *
+ * @author user
+ */
+public class ChildrenGame {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) throws IOException {
-//        int data[] = {90, 123, 134, 52, 36};
-//        for (int i = 0; i < data.length - i; i++) {
-//            for (int j = 0; j < data.length - 1; j++) {
-//                if (data[j] < data[j + 1]) {
-//                    int tmp = data[j];
-//                    data[j] = data[j + 1];
-//                    data[j + 1] = tmp;
-//                }
-//            }
-//        }
-        System.out.println(firstLessThanSecond("90", "56"));
-        System.out.println(firstLessThanSecond("999", "56"));
-        System.out.println(firstLessThanSecond("998", "99"));
-        String[] numbers = {"999", "124", "90", "56", "9", "996", "879", "87", "870", "1231231232", "123"};
-        sort(numbers);
-        for (String s : numbers) {
-            System.out.println(s);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder output = new StringBuilder("");
+        while (true) {
+            int numberCount = Integer.parseInt(br.readLine());
+            if (numberCount == 0) {
+                break;
+            }
+            String numbers[] = br.readLine().split(" ");
+            sort(numbers);
+
+            for (int i = numbers.length - 1; i >= 0; i--) {
+                //  System.out.println(numbers[i]);
+                output.append(numbers[i]);
+            }
+            output.append("\n");
+
         }
-//
-//        for (int i = 0; i < data.length; i++) {
-//            System.out.println(data[i]);
-//        }
+        System.out.print(output);
     }
 
     private static void sort(String[] numbers) {
